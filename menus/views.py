@@ -17,5 +17,6 @@ menu_not_detail = MenuViewSet.as_view({
 menu_detail = MenuViewSet.as_view({
     'get': 'retrieve',
     'put': 'update',
+    'patch': 'partial_update',
     'delete': 'destroy',
 })
