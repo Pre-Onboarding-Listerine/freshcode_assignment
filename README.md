@@ -53,7 +53,7 @@
     - Request시 Header에 Authorization 키를 체크합니다.
     - Authorization 키의 값이 없거나 인증 실패시 적절한 Error Handling을 해주세요.
     - 상품 추가/수정/삭제는 admin 권한을 가진 사용자만 이용할 수 있습니다.
-- 시용자 인증 / 인가
+- 용자 인증 / 인가
 - 상품 관리 기능
     - 아래 상품 JSON 구조를 이용하여 데이터베이스 및 API를 개발해주세요.
         - 구현
@@ -70,9 +70,9 @@
 1. `DRF`와 `PostgreSQL`을 사용해 구현하였습니다.
 
 2. 사용한 기술 스텍
-- Django = 3.2.9 / Python = 3.8.12 / Djangorestframework = 3.12.4 / Postgres
-- AWS EC2 / Docker / Docker-compose / GIT / GITHUB
-- POSTMAN / CodeWithMe(PyCharm) / GoogleMeet
+- `Django` = 3.2.9 / `Python` = 3.8.12 / `Djangorestframework` = 3.12.4 / `PostgreSQL`
+- `AWS EC2` / `Docker` / `Docker-compose` / `GIT` / `GITHUB`
+- `POSTMAN` / `CodeWithMe(PyCharm)` / `GoogleMeet`
 
 3. ERD (모델링)
 ![image](https://user-images.githubusercontent.com/32446834/140312743-eda03d7f-c423-46a0-8e34-fda706d50876.png)
