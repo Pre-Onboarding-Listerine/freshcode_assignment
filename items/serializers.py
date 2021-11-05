@@ -7,4 +7,4 @@ class ItemSerializer(ModelSerializer):
     class Meta:
         model = Item
         fields = '__all__'
-        extra_kwargs = {'menu_id': {'read_only': True}}
+        # extra_kwargs = {'menu_id': {'read_only': True}}
