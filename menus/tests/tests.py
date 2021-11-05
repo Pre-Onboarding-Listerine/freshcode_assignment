@@ -57,12 +57,12 @@ class MenuTest(TestCase):
     #     }
     #     response = self.client.put('/api/menus/1')
     #     self.assertEqual(response.status_code, 201)
-    
+
     # def test_update_menu_put_fail(self):
     #     self.client = Client()
 
     #     headers = {'HTTP_Authorization' : 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.zZ8gW9Xqg2Qy4ilOjv1iQWM-XqpaU-AVgVfz7FkUzfQ'}
-  
+
     #     menu  = {
     #     "category": "qweasdqeasd",
     #     "name": "dsfasdfsew",
@@ -80,7 +80,7 @@ class MenuTest(TestCase):
         response = self.client.delete('/api/menus/1', **headers)
 
         self.assertEqual(response.status_code, 201)
-    
+
     # def test_destroy_menu_delete_fail(self):
     #     self.client = Client()
     #     headers = {'HTTP_Authorization': 'token'}
