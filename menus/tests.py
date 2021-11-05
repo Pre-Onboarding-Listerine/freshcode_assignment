@@ -55,13 +55,17 @@ class MenuTest(TestCase):
             "type": "vegetarianism"
         }
 
+        self.headers = {
+            "HTTP_Authorization": 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.7WjlfoKJnO1rDxDVhavY6tyFPdfmjsrjUzBndMsb_gc'
+        }
+
     def tearDown(self):
         Menu.objects.all().delete()
         Item.objects.all().delete()
         Tag.objects.all().delete()
 
     def test_register_menu_post_success(self):
-        response = self.client.post("/api/menus", json.dumps(self.menu1), content_type='application/json')
+        response = self.client.post("/api/menus", json.dumps(self.menu1), content_type='application/json', **self.headers)
 
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(response.data['category'], self.menu1['category'])
@@ -71,13 +75,12 @@ class MenuTest(TestCase):
         self.assertEqual(response.data['badge'], self.menu1['badge'])
 
     def test_register_menu_post_fail(self):
-        response = self.client.post("/api/menus", json.dumps(self.menu2), content_type='application/json')
+        response = self.client.post("/api/menus", json.dumps(self.menu2), content_type='application/json', **self.headers)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
     def test_destroy_menu_delete_success(self):
         menu = Menu.objects.create(**self.menu1)
-        headers = {'HTTP_Authorization': 'token'}
-        response = self.client.delete("/api/menus/" + str(menu.id), **headers)
+        response = self.client.delete("/api/menus/" + str(menu.id), **self.headers)
 
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
@@ -93,7 +96,8 @@ class MenuTest(TestCase):
         response = self.client.put(
             "/api/menus/" + str(menu.id),
             data=json.dumps(changes),
-            content_type="application/json"
+            content_type="application/json",
+            **self.headers
         )
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -115,7 +119,8 @@ class MenuTest(TestCase):
         response = self.client.put(
             "/api/menus/" + str(menu.id),
             data=json.dumps(changes),
-            content_type="application/json"
+            content_type="application/json",
+            **self.headers
         )
 
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
@@ -130,7 +135,8 @@ class MenuTest(TestCase):
         response = self.client.put(
             "/api/menus/" + str(menu.id),
             data=json.dumps(changes),
-            content_type="application/json"
+            content_type="application/json",
+            **self.headers
         )
 
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
@@ -145,7 +151,8 @@ class MenuTest(TestCase):
         response = self.client.patch(
             "/api/menus/" + str(menu.id),
             data=json.dumps(changes),
-            content_type="application/json"
+            content_type="application/json",
+            **self.headers
         )
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -155,7 +162,7 @@ class MenuTest(TestCase):
 
     def test_get_menu_detail_with_exist_id(self):
         menu = Menu.objects.create(**self.menu1)
-        response = self.client.get("/api/menus/" + str(menu.id))
+        response = self.client.get("/api/menus/" + str(menu.id), **self.headers)
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data['id'], menu.id)
@@ -166,7 +173,7 @@ class MenuTest(TestCase):
 
         item = Item.objects.create(**self.item1)
 
-        response = self.client.get("/api/menus/" + str(menu.id))
+        response = self.client.get("/api/menus/" + str(menu.id), **self.headers)
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data['items'][0]['id'], item.id)
@@ -179,7 +186,7 @@ class MenuTest(TestCase):
         item = Item.objects.create(**self.item1)
         tag = Tag.objects.create(**self.tag1)
 
-        response = self.client.get("/api/menus/" + str(menu.id))
+        response = self.client.get("/api/menus/" + str(menu.id), **self.headers)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data['items'][0]['id'], item.id)
         self.assertEqual(response.data['tags'][0]['id'], tag.id)
@@ -197,17 +204,18 @@ class MenuTest(TestCase):
 
         Item.objects.create(**self.item2)
 
-        response = self.client.get("/api/menus")
+        response = self.client.get("/api/menus", **self.headers)
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(response.data['results']), 2)
 
     def test_get_menus_with_pagination(self):
+
         for _ in range(12):
             Menu.objects.create(**self.menu1)
         PAGE_SIZE = 5
 
-        response = self.client.get("/api/menus")
+        response = self.client.get("/api/menus", **self.headers)
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(response.data["results"]), PAGE_SIZE)
@@ -221,7 +229,8 @@ class MenuTest(TestCase):
         }
         response = self.client.get(
             "/api/menus",
-            data=params
+            data=params,
+            **self.headers
         )
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)

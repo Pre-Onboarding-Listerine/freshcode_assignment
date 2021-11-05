@@ -22,5 +22,5 @@ class SigninView(APIView):
 			return Response(" 존재하지 않는 이메일 ", status=status.HTTP_404_NOT_FOUND)
 		if not bcrypt.checkpw(request.data["password"].encode('utf-8'), user.password.encode('utf-8')):
 			return Response(" 유효하지 않은 비밀번호 ", status=status.HTTP_401_UNAUTHORIZED)
-		token = jwt.encode({'id': user.id }, SECRET)
+		token = "Bearer " + jwt.encode({'id': user.id }, SECRET)
 		return Response(token, status=status.HTTP_200_OK)

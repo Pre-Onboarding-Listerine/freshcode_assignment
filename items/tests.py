@@ -36,6 +36,10 @@ class ItemTest(unittest.TestCase):
             "is_sold": False
         }
 
+        self.headers = {
+            "HTTP_Authorization": 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.7WjlfoKJnO1rDxDVhavY6tyFPdfmjsrjUzBndMsb_gc'
+        }
+
     def tearDown(self) -> None:
         Menu.objects.all().delete()
         Item.objects.all().delete()
@@ -44,7 +48,8 @@ class ItemTest(unittest.TestCase):
         response = self.client.post(
             "/api/items",
             data=json.dumps(self.item1),
-            content_type="application/json"
+            content_type="application/json",
+            **self.headers
         )
 
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
@@ -57,7 +62,8 @@ class ItemTest(unittest.TestCase):
         response = self.client.post(
             "/api/items",
             data=json.dumps(self.item2),
-            content_type="application/json"
+            content_type="application/json",
+            **self.headers
         )
 
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
@@ -76,7 +82,8 @@ class ItemTest(unittest.TestCase):
         response = self.client.put(
             "/api/items/" + str(item.id),
             data=json.dumps(changes),
-            content_type="application/json"
+            content_type="application/json",
+            **self.headers
         )
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -97,7 +104,8 @@ class ItemTest(unittest.TestCase):
         response = self.client.put(
             "/api/items/" + str(item.id),
             data=json.dumps(changes),
-            content_type="application/json"
+            content_type="application/json",
+            **self.headers
         )
 
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
@@ -114,7 +122,8 @@ class ItemTest(unittest.TestCase):
         response = self.client.patch(
             "/api/items/" + str(item.id),
             data=json.dumps(changes),
-            content_type="application/json"
+            content_type="application/json",
+            **self.headers
         )
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -127,14 +136,16 @@ class ItemTest(unittest.TestCase):
         item = Item.objects.create(**item_data)
 
         response = self.client.delete(
-            "/api/items/" + str(item.id)
+            "/api/items/" + str(item.id),
+            **self.headers
         )
 
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
     def test_delete_item_with_non_exist_item(self):
         response = self.client.delete(
-            "/api/items/1"
+            "/api/items/1",
+            **self.headers
         )
 
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
