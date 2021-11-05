@@ -9,6 +9,7 @@
 # :: 팀
 * 팀이름: 리스테린(Listerine)
 * 팀원
+---------------------
 |이름|역할|GITHUB|BLOG|
 |:--:|:--:|:--:|:--:|
 |`고영수`|modeling|[kohys92]https://github.com/kohys92|[고영수]https://velog.io/@kohys92|
