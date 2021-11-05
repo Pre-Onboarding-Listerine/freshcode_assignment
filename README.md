@@ -79,7 +79,7 @@
 
 4. 구조
 ```
-file:///Users/eunhyepark/Desktop/스크린샷%202021-11-06%20오전%202.15.36.png
+file:///Users/eunhyepark/Desktop/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-11-06%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%202.15.36.png
 ```
 
 ### 구현 기능
@@ -99,13 +99,10 @@ file:///Users/eunhyepark/Desktop/스크린샷%202021-11-06%20오전%202.15.36.pn
     - `tags`: 특정 상품에 대한 타입과 ID 정보를 담고 있으며 관리인에 한하여 테그의 추가/수정/삭제가 가능합니다.
     - `tests`: 각 app에서 함수 및 메소드들을 `tests` 디렉토리의 테스트들로 유닛테스트를 실행할 수 있습니다.
 
-**serializer**
-
 ### Endpoints
 
 - 회원가입 POST: `/api/members/signup`
 - 로그인 POST: `/api/members/signin`
-- 로그아웃 POST: `/api/members/signout`
 - 상품 등록 POST: `/api/menus`
 - 상품 수정 PUT: `/api/menus/<menu-id>`
 - 상품 삭제 DELETE: `/api/menus/<menu-id>`
