@@ -6,9 +6,8 @@
 * 기업사이트: https://www.freshcode.me
 * 기업채용공고: https://www.wanted.co.kr/wd/34118
 ----
-# :: 팀
-* 팀이름: 리스테린(Listerine)
-* 팀원
+# :: 팀 :  리스테린(Listerine)
+
 ---------------------
 |이름|역할|GITHUB|BLOG|
 |:--:|:--:|:--:|:--:|
