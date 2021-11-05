@@ -146,3 +146,6 @@ http://ec2-13-125-235-63.ap-northeast-2.compute.amazonaws.com:8001
     ```
     http://localhost:8001
     ```
+# Reference
+
+이 프로젝트는 원티드x위코드 백엔드 프리온보딩 과제 일환으로 프레시코드에서 출제한 과제를 기반으로 만들었습니다.
