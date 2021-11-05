@@ -18,7 +18,6 @@
 | `윤수진` | modeling | https://github.com/Gouache-studio|blog| https://pro-yomi.tistory.com |
 | `주종민` | modeling | https://github.com/study-by-myself | https://gouache-studio.tistory.com/ |
 
-----
 
 ## :: 과제
 
