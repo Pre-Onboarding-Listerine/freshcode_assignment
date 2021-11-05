@@ -1,21 +1,14 @@
 from rest_framework.serializers import ModelSerializer
 
-from menus.models import Menu, Item, Tag
+from items.serializers import ItemSerializer
+from menus.models import Menu
+from tags.serializers import TagSerializer
 
 
 class MenuSerializer(ModelSerializer):
+    items = ItemSerializer(many=True, required=False, read_only=True)
+    tags = TagSerializer(many=True, required=False, read_only=True)
+
     class Meta:
         model = Menu
-        fields = '__all__'
-
-
-class ItemSerializer(ModelSerializer):
-    class Meta:
-        model = Item
-        fields = '__all__'
-
-
-class TagSerializer(ModelSerializer):
-    class Meta:
-        model = Tag
         fields = '__all__'
