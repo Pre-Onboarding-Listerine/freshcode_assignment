@@ -1,0 +1,10 @@
+from rest_framework.serializers import ModelSerializer
+
+from items.models import Item
+
+
+class ItemSerializer(ModelSerializer):
+    class Meta:
+        model = Item
+        fields = '__all__'
+        extra_kwargs = {'menu_id': {'read_only': True}}
