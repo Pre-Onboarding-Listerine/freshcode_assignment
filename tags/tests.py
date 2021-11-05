@@ -32,6 +32,10 @@ class TagTest(unittest.TestCase):
             "type": None
         }
 
+        self.headers = {
+            "HTTP_Authorization": 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.7WjlfoKJnO1rDxDVhavY6tyFPdfmjsrjUzBndMsb_gc'
+        }
+
     def tearDown(self) -> None:
         Menu.objects.all().delete()
         Tag.objects.all().delete()
@@ -42,7 +46,8 @@ class TagTest(unittest.TestCase):
         response = self.client.post(
             "/api/tags",
             data=json.dumps(tag_data),
-            content_type="application/json"
+            content_type="application/json",
+            **self.headers
         )
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(response.data["name"], self.tag1["name"])
@@ -54,7 +59,8 @@ class TagTest(unittest.TestCase):
         response = self.client.post(
             "/api/tags",
             data=json.dumps(invalid_tag_data),
-            content_type="application/json"
+            content_type="application/json",
+            **self.headers
         )
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
@@ -71,7 +77,8 @@ class TagTest(unittest.TestCase):
         response = self.client.put(
             "/api/tags/" + str(tag.id),
             data=json.dumps(valid_changes),
-            content_type="application/json"
+            content_type="application/json",
+            **self.headers
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data["name"], valid_changes["name"])
@@ -89,7 +96,8 @@ class TagTest(unittest.TestCase):
         response = self.client.put(
             "/api/tags/" + str(tag.id),
             data=json.dumps(valid_changes),
-            content_type="application/json"
+            content_type="application/json",
+            **self.headers
         )
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
@@ -105,7 +113,8 @@ class TagTest(unittest.TestCase):
         response = self.client.patch(
             "/api/tags/" + str(tag.id),
             data=json.dumps(valid_changes),
-            content_type="application/json"
+            content_type="application/json",
+            **self.headers
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data["type"], valid_changes["type"])
@@ -115,11 +124,11 @@ class TagTest(unittest.TestCase):
         tag_data['menu_id'] = self.menu_instance
         tag = Tag.objects.create(**tag_data)
 
-        response = self.client.delete("/api/tags/" + str(tag.id))
+        response = self.client.delete("/api/tags/" + str(tag.id), **self.headers)
 
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
     def test_delete_tag_with_non_exist_id(self):
-        response = self.client.delete("/api/tags/1")
+        response = self.client.delete("/api/tags/1", **self.headers)
 
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)

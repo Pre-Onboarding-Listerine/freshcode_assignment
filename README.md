@@ -1,24 +1,30 @@
 # :: 원티드 X 위코드 백엔드 프리온보딩 과제2 <freshcode_assignment>
 
-# :: 기업과제
+----
+## :: 기업과제
+
 * 기업명: 프레시코드(Fresh Code)
 * 기업사이트: https://www.freshcode.me
 * 기업채용공고: https://www.wanted.co.kr/wd/34118
 
-# :: 팀 :  리스테린(Listerine)
+## :: 팀 :  리스테린(Listerine)
 
+* 팀원
 
-|이름|역할|GITHUB|BLOG|
-|:--:|:--:|:--:|:--:|
-|`고영수`|modeling|https://github.com/kohys92|https://velog.io/@kohys92|
-|`김주완`|modeling|https://github.com/joowankim|https://make-easy-anything.tistory.com/|
-|`박은혜`|modeling|https://github.com/eunhye43|https://velog.io/@maja43|
-|`윤수진`|modeling|https://github.com/Gouache-studio|blog|
-|`주종민`|modeling|https://github.com/study-by-myself|https://gouache-studio.tistory.com/|
+| 이름 | 역할 | GITHUB | BLOG |
+| :---: | :---: | :---: | :---: |
+| `고영수` | modeling | [kohys92](https://github.com/kohys92) | https://velog.io/@kohys92 |
+| `김주완` | modeling | [joowankim](https://github.com/joowankim) | https://make-easy-anything.tistory.com/ |
+| `박은혜` | modeling | [eunhye43](https://github.com/eunhye43) | https://velog.io/@maja43 |
+| `윤수진` | modeling | https://github.com/Gouache-studio|blog|
+| `주종민` | modeling | https://github.com/study-by-myself | https://gouache-studio.tistory.com/ |
 
-# :: 과제
-```
-* <필수 포함 사항>
+----
+
+## :: 과제
+
+### [필수 포함 사항]
+
 - Swagger나 Postman을 이용하여 API 테스트 가능하도록 구현
 - Swagger 대신 Postman 이용시 API 목록을 Export하여 함께 제출해 주세요
 - READ.ME 작성
@@ -28,17 +34,20 @@
     - Swagger를 통한 API 테스트할때 필요한 상세 방법
     - 해당 과제를 진행하면서 회고 내용 블로그 포스팅
 
-* <평가 요소>
+### [평가 요소]
+
 - 주어진 요구사항에 대한 설계/구현 능력
 - 코드로 동료를 배려할 수 있는 구성 능력 (코드, 주석, README 등)
 - 유닛 테스트 구현 능력
 
-* <개발 요구 사항>
+### [개발 요구 사항]
+
 - Database 는 RDBMS를 이용합니다.
 - 로그인 기능
     - JWT 인증 방식을 구현합니다.
 
-* <기능 개발>
+### [기능 개발]
+
 - 구현
     - JWT 인증 방식을 이용합니다.
     - 서비스 실행시 데이터베이스 또는 In Memory 상에 유저를 미리 등록해주세요.
@@ -119,20 +128,9 @@ file:///Users/eunhyepark/Desktop/스크린샷%202021-11-06%20오전%202.15.36.pn
     $ git clone https://github.com/Pre-Onboarding-Listerine/freshcode_assignment.git
     ```
 
-2. `pipenv`를 사용해 python 개발환경 설정
+2. `secret.py` 프로젝트 루트 디렉토리에 위치시키기
 
-    ```bash
-    $ cd <프로젝트 루트 디렉토리>
-    $ pip install pipenv
-
-    $ pipenv shell # pipenv 가상환경 활성화
-    $ pipenv update # Pipfile.lock 빌드
-    $ pipenv install --system # 의존성 패키지 설치 !Pipfile.lock 생성됐는지 확인!
-    ```
-
-3. `secret.py` 프로젝트 루트 디렉토리에 위치시키기
-
-4. 애플리케이션 실행하기
+3. 애플리케이션 실행하기
 
     ```bash
     $ docker-compose up
@@ -144,7 +142,7 @@ file:///Users/eunhyepark/Desktop/스크린샷%202021-11-06%20오전%202.15.36.pn
     $ docker-compose exec backend python manage.py migrate
     ```
 
-5. 애플리케이션에 접근하기
+4. 애플리케이션에 접근하기
 
     django의 디폴트 포트인 8000포트가 아닌 8001번 포트와 연결되어 있습니다. 따라서 아래 주소로 로컬에 실행한 애플리케이션에 접근하실 수 있습니다.
     ```
