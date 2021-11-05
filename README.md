@@ -10,13 +10,13 @@
 
 * 팀원
 
-| 이름 | 역할 | GITHUB | BLOG |
-| :---: | :---: | :---: | :---: |
-| `고영수` | modeling | [kohys92](https://github.com/kohys92) | https://velog.io/@kohys92 |
-| `김주완` | modeling | [joowankim](https://github.com/joowankim) | https://make-easy-anything.tistory.com |
-| `박은혜` | modeling | [eunhye43](https://github.com/eunhye43) | https://velog.io/@majaeh43 |
-| `윤수진` | modeling | [study-by-myself](https://github.com/study-by-myself)| https://pro-yomi.tistory.com |
-| `주종민` | modeling | [Gouache-studio](https://github.com/Gouache-studio) | https://gouache-studio.tistory.com/ |
+| 이름 | GITHUB | BLOG |
+| :---: | :---: | :---: |
+| `고영수` | [kohys92](https://github.com/kohys92) | https://velog.io/@kohys92 |
+| `김주완` | [joowankim](https://github.com/joowankim) | https://make-easy-anything.tistory.com |
+| `박은혜` | [eunhye43](https://github.com/eunhye43) | https://velog.io/@majaeh43 |
+| `윤수진` | [study-by-myself](https://github.com/study-by-myself)| https://pro-yomi.tistory.com |
+| `주종민` | [Gouache-studio](https://github.com/Gouache-studio) | https://gouache-studio.tistory.com/ |
 
 
 ## :: 과제
@@ -53,7 +53,7 @@
     - Request시 Header에 Authorization 키를 체크합니다.
     - Authorization 키의 값이 없거나 인증 실패시 적절한 Error Handling을 해주세요.
     - 상품 추가/수정/삭제는 admin 권한을 가진 사용자만 이용할 수 있습니다.
-- 용자 인증 / 인가
+- 사용자 인증 / 인가
 - 상품 관리 기능
     - 아래 상품 JSON 구조를 이용하여 데이터베이스 및 API를 개발해주세요.
         - 구현
@@ -64,7 +64,6 @@
             - 관리자는 상품 추가/수정/삭제를 할 수 있습니다.
             - 상품 관리 API 개발시 적절한 Error Handling을 해주세요.
 ```
-
 
 ### 과제 해결 방안
 1. `DRF`와 `PostgreSQL`을 사용해 구현하였습니다.
@@ -109,7 +108,13 @@
 1. 유닛테스트
 - menus, items, tags 의 추가/조회/수정/삭제 기능에 관하여 Success case와 Fail case로 나누어 Unit Test를 진행하였습니다.
 
-2. POSTMAN 확인:
+2. POSTMAN 확인: https://documenter.getpostman.com/view/UVC3j7QN?version=latest
+
+3. 배포된 서버의 주소
+
+```commandline
+http://ec2-13-125-235-63.ap-northeast-2.compute.amazonaws.com:8001
+```
 
 # 개발환경 설정 방법
 
