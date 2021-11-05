@@ -13,12 +13,12 @@
 | 이름 | 역할 | GITHUB | BLOG |
 | :---: | :---: | :---: | :---: |
 | `고영수` | modeling | [kohys92](https://github.com/kohys92) | https://velog.io/@kohys92 |
-| `김주완` | modeling | [joowankim](https://github.com/joowankim) | https://make-easy-anything.tistory.com/ |
-| `박은혜` | modeling | [eunhye43](https://github.com/eunhye43) | https://velog.io/@maja43 |
-| `윤수진` | modeling | https://github.com/Gouache-studio|blog| https://pro-yomi.tistory.com |
-| `주종민` | modeling | https://github.com/study-by-myself | https://gouache-studio.tistory.com/ |
+| `김주완` | modeling | [joowankim](https://github.com/joowankim) | https://make-easy-anything.tistory.com |
+| `박은혜` | modeling | [eunhye43](https://github.com/eunhye43) | https://velog.io/@majaeh43 |
+| `윤수진` | modeling | [study-by-myself](https://github.com/study-by-myself)| https://pro-yomi.tistory.com |
+| `주종민` | modeling | [Gouache-studio] (https://github.com/Gouache-studio) | https://gouache-studio.tistory.com/ |
 
-
+```
 ## :: 과제
 
 ### [필수 포함 사항]
@@ -63,6 +63,7 @@
             - 관리자는 상품 추가/수정/삭제를 할 수 있습니다.
             - 상품 관리 API 개발시 적절한 Error Handling을 해주세요.
 ```
+
 
 ### 과제 해결 방안
 1. `DRF`와 `PostgreSQL`을 사용해 구현하였습니다.
