@@ -1,17 +1,19 @@
 from rest_framework import serializers
-from django.contrib.auth import get_user_model
+from django.contrib.auth.hashers import make_password
+from .models import User
 
-User = get_user_model()
+
 
 class SignupSerializer(serializers.ModelSerializer):
 	password = serializers.CharField(write_only=True)
 
 	def create(self, validated_data):
 		user = User.objects.create(email=validated_data["email"])
-		user.set_password(validated_data["password"])
+		user.name = (validated_data["email"])
+		user.password = make_password(validated_data["password"])
 		user.save()
 		return user
 		
 	class Meta:
 		model = User
-		fields = ["pk", "email", "password"]
+		fields = ["email", "password"]
