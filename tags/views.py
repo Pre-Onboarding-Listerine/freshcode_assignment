@@ -15,5 +15,6 @@ tag_not_detail = TagViewSet.as_view({
 
 tag_detail = TagViewSet.as_view({
     'put': 'update',
+    'patch': 'partial_update',
     'delete': 'destroy',
 })
