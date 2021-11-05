@@ -32,6 +32,10 @@ class TagTest(unittest.TestCase):
             "type": None
         }
 
+    def tearDown(self) -> None:
+        Menu.objects.all().delete()
+        Tag.objects.all().delete()
+
     def test_create_tag_with_valid_data(self):
         tag_data = self.tag1.copy()
         tag_data['menu_id'] = self.menu_instance.id

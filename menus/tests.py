@@ -57,6 +57,8 @@ class MenuTest(TestCase):
 
     def tearDown(self):
         Menu.objects.all().delete()
+        Item.objects.all().delete()
+        Tag.objects.all().delete()
 
     def test_register_menu_post_success(self):
         response = self.client.post("/api/menus", json.dumps(self.menu1), content_type='application/json')
@@ -198,8 +200,45 @@ class MenuTest(TestCase):
         response = self.client.get("/api/menus")
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), 2)
+        self.assertEqual(len(response.data['results']), 2)
 
+    def test_get_menus_with_pagination(self):
+        for _ in range(12):
+            Menu.objects.create(**self.menu1)
+        PAGE_SIZE = 5
 
+        response = self.client.get("/api/menus")
 
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(response.data["results"]), PAGE_SIZE)
 
+    def test_get_menus_with_offset_and_limit(self):
+        for _ in range(12):
+            Menu.objects.create(**self.menu1)
+        PAGE_SIZE = 5
+        params = {
+            "offset": 6
+        }
+        response = self.client.get(
+            "/api/menus",
+            data=params
+        )
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(response.data["results"]), PAGE_SIZE)
+
+        next_params = {
+            "next": response.data['next']
+        }
+
+        next_response = self.client.get(
+            "/api/menus",
+            data=next_params
+        )
+
+        exceeded_params = {
+            "next": response.data['next']
+        }
+
+        self.assertEqual(next_response.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(next_response.data['results']), PAGE_SIZE)
