@@ -1,6 +1,5 @@
 # :: 원티드 X 위코드 백엔드 프리온보딩 과제2 <freshcode_assignment>
 
-----
 ## :: 기업과제
 
 * 기업명: 프레시코드(Fresh Code)
