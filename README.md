@@ -11,11 +11,11 @@
 ---------------------
 |이름|역할|GITHUB|BLOG|
 |:--:|:--:|:--:|:--:|
-|`고영수`|modeling|[kohys92]https://github.com/kohys92|[고영수]https://velog.io/@kohys92|
-|`김주완`|modeling|https://github.com/joowankim|[김주완]https://make-easy-anything.tistory.com/|
-|`박은혜`|modeling|[eunhye43]https://github.com/eunhye43|[박은혜]https://velog.io/@maja43|
+|`고영수`|modeling|https://github.com/kohys92|https://velog.io/@kohys92|
+|`김주완`|modeling|https://github.com/joowankim|https://make-easy-anything.tistory.com/|
+|`박은혜`|modeling|https://github.com/eunhye43|https://velog.io/@maja43|
 |`윤수진`|modeling|https://github.com/Gouache-studio|blog|
-|`주종민`|modeling|https://github.com/study-by-myself|[주종민]https://gouache-studio.tistory.com/|
+|`주종민`|modeling|https://github.com/study-by-myself|https://gouache-studio.tistory.com/|
 
 ----
 # :: 과제
