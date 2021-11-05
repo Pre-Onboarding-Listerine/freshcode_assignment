@@ -16,7 +16,7 @@
 | `고영수` | modeling | [kohys92](https://github.com/kohys92) | https://velog.io/@kohys92 |
 | `김주완` | modeling | [joowankim](https://github.com/joowankim) | https://make-easy-anything.tistory.com/ |
 | `박은혜` | modeling | [eunhye43](https://github.com/eunhye43) | https://velog.io/@maja43 |
-| `윤수진` | modeling | https://github.com/Gouache-studio|blog|
+| `윤수진` | modeling | https://github.com/Gouache-studio|blog| https://pro-yomi.tistory.com |
 | `주종민` | modeling | https://github.com/study-by-myself | https://gouache-studio.tistory.com/ |
 
 ----
@@ -77,10 +77,6 @@
 - AWS EC2 / Docker / Docker-compose / GIT / GITHUB
 - POSTMAN / CodeWithMe(PyCharm) / GoogleMeet
 
-4. 구조
-```
-file:///Users/eunhyepark/Desktop/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-11-06%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%202.15.36.png
-```
 
 ### 구현 기능
 
