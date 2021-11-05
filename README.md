@@ -1,11 +1,10 @@
-----
 # :: 원티드 X 위코드 백엔드 프리온보딩 과제2 <freshcode_assignment>
-----
+
 # :: 기업과제
 * 기업명: 프레시코드(Fresh Code)
 * 기업사이트: https://www.freshcode.me
 * 기업채용공고: https://www.wanted.co.kr/wd/34118
-----
+
 # :: 팀 :  리스테린(Listerine)
 
 ---------------------
@@ -17,7 +16,6 @@
 |`윤수진`|modeling|https://github.com/Gouache-studio|blog|
 |`주종민`|modeling|https://github.com/study-by-myself|https://gouache-studio.tistory.com/|
 
-----
 # :: 과제
 ```
 * <필수 포함 사항>
@@ -58,7 +56,7 @@
             - 관리자는 상품 추가/수정/삭제를 할 수 있습니다.
             - 상품 관리 API 개발시 적절한 Error Handling을 해주세요.
 ```
-----
+
 ### 과제 해결 방안
 1. `DRF`와 `PostgreSQL`을 사용해 구현하였습니다.
 
@@ -69,6 +67,11 @@
 - Django = 3.2.9 / Python = 3.8.12 / Djangorestframework = 3.12.4 / Postgres
 - AWS EC2 / Docker / Docker-compose / GIT / GITHUB
 - POSTMAN / CodeWithMe(PyCharm) / GoogleMeet
+
+4. 구조
+```
+![Uploading 스크린샷 2021-11-06 오전 2.15.36.png…]()
+```
 
 ### 구현 기능
 
@@ -99,8 +102,6 @@
 - 상품 삭제 DELETE: `/api/menus/<menu-id>`
 - 상품 상세 조회 GET: `/api/menus/<menu-id>`
 - 상품 리스트 조회 GET: `/api/menus`
-* <과제 결과물 테스트 및 확인 방법>
-- POSTMAN 확인:
 
 ### 과제 결과물 테스트 및 확인 방법
 1. 유닛테스트
