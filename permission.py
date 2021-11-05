@@ -10,9 +10,6 @@ from rest_framework.permissions import BasePermission, SAFE_METHODS
 
 
 class IsAdminOnly(BasePermission):
-    """
-    Global permission check for blocked IPs.
-    """
 
     def has_permission(self, request, view):
         access_token = request.headers.get('Authorization', None)
