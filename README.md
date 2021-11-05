@@ -7,7 +7,7 @@
 
 # :: 팀 :  리스테린(Listerine)
 
----------------------
+
 |이름|역할|GITHUB|BLOG|
 |:--:|:--:|:--:|:--:|
 |`고영수`|modeling|https://github.com/kohys92|https://velog.io/@kohys92|
@@ -70,7 +70,7 @@
 
 4. 구조
 ```
-![Uploading 스크린샷 2021-11-06 오전 2.15.36.png…]()
+file:///Users/eunhyepark/Desktop/스크린샷%202021-11-06%20오전%202.15.36.png
 ```
 
 ### 구현 기능
