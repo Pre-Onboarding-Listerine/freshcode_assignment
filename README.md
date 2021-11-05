@@ -16,12 +16,13 @@
 | `김주완` | modeling | [joowankim](https://github.com/joowankim) | https://make-easy-anything.tistory.com |
 | `박은혜` | modeling | [eunhye43](https://github.com/eunhye43) | https://velog.io/@majaeh43 |
 | `윤수진` | modeling | [study-by-myself](https://github.com/study-by-myself)| https://pro-yomi.tistory.com |
-| `주종민` | modeling | [Gouache-studio] (https://github.com/Gouache-studio) | https://gouache-studio.tistory.com/ |
+| `주종민` | modeling | [Gouache-studio](https://github.com/Gouache-studio) | https://gouache-studio.tistory.com/ |
 
-```
+
 ## :: 과제
 
-### [필수 포함 사항]
+```
+[필수 포함 사항]
 
 - Swagger나 Postman을 이용하여 API 테스트 가능하도록 구현
 - Swagger 대신 Postman 이용시 API 목록을 Export하여 함께 제출해 주세요
@@ -32,19 +33,19 @@
     - Swagger를 통한 API 테스트할때 필요한 상세 방법
     - 해당 과제를 진행하면서 회고 내용 블로그 포스팅
 
-### [평가 요소]
+[평가 요소]
 
 - 주어진 요구사항에 대한 설계/구현 능력
 - 코드로 동료를 배려할 수 있는 구성 능력 (코드, 주석, README 등)
 - 유닛 테스트 구현 능력
 
-### [개발 요구 사항]
+[개발 요구 사항]
 
 - Database 는 RDBMS를 이용합니다.
 - 로그인 기능
     - JWT 인증 방식을 구현합니다.
 
-### [기능 개발]
+[기능 개발]
 
 - 구현
     - JWT 인증 방식을 이용합니다.
@@ -68,13 +69,13 @@
 ### 과제 해결 방안
 1. `DRF`와 `PostgreSQL`을 사용해 구현하였습니다.
 
-2. ERD (모델링)
-![image](https://user-images.githubusercontent.com/32446834/140312743-eda03d7f-c423-46a0-8e34-fda706d50876.png)
-
-3. 사용한 기술 스텍
+2. 사용한 기술 스텍
 - Django = 3.2.9 / Python = 3.8.12 / Djangorestframework = 3.12.4 / Postgres
 - AWS EC2 / Docker / Docker-compose / GIT / GITHUB
 - POSTMAN / CodeWithMe(PyCharm) / GoogleMeet
+
+3. ERD (모델링)
+![image](https://user-images.githubusercontent.com/32446834/140312743-eda03d7f-c423-46a0-8e34-fda706d50876.png)
 
 
 ### 구현 기능
