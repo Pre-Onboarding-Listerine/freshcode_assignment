@@ -19,6 +19,7 @@
 
 ----
 # :: 과제
+```
 * <필수 포함 사항>
 - Swagger나 Postman을 이용하여 API 테스트 가능하도록 구현
 - Swagger 대신 Postman 이용시 API 목록을 Export하여 함께 제출해 주세요
@@ -56,24 +57,56 @@
             - 사용자는 상품 조회만 가능합니다.
             - 관리자는 상품 추가/수정/삭제를 할 수 있습니다.
             - 상품 관리 API 개발시 적절한 Error Handling을 해주세요.
+```
 ----
-* <과제 해결 방안>
-## ERD (모델링)
+### 과제 해결 방안
+1. `DRF`와 `PostgreSQL`을 사용해 구현하였습니다.
+
+2. ERD (모델링)
 ![image](https://user-images.githubusercontent.com/32446834/140312743-eda03d7f-c423-46a0-8e34-fda706d50876.png)
 
-> `DRF`와 `PostgreSQL`을 사용해 구현하였습니다.
+3. 사용한 기술 스텍
+- Django = 3.2.9 / Python = 3.8.12 / Djangorestframework = 3.12.4 / Postgres
+- AWS EC2 / Docker / Docker-compose / GIT / GITHUB
+- POSTMAN / CodeWithMe(PyCharm) / GoogleMeet
 
-> freshcode project
-- `members`: bulletin board라는 게시판 프로젝트의 구체적인 설정 파일 및 각 앱으로의 요청 라우팅 역할을 맡습니다.
-- `menus`: 게시판의 회원에 대한 요청을 처리합니다.
-- `items`: 게시글에 대한 조작 요청을 처리합니다.
-- `tags`: 인증 및 인가와 관련된 요청을 처리합니다.
-- 'tests': 각 app에서 함수 및 메소드들을 `tests` 디렉토리의 테스트들로 유닛테스트를 실행할 수 있습니다.
+### 구현 기능
 
+**로그인기능**
+
+- JWT 인증을 통해 관리인과 사용자 분리하여 인증 및 인가 기능을 구현하였습니다.
+- Authorization 토큰을 확인해 권한을 부여하였습니다.
+- Token의 유무에 따라 Error Handling을 하였고, 권한의 유무에 따라 상품의 추가/수정/삭제가 이루어지도록 하였습니다.
+
+**상품 관리 기능**
+
+- 4개의 앱으로 나누어 프로젝트를 진행하였습니다.(members, menus, items, tags)
+    - `members`: 상품을 구매하는 회원에 대한 정보를 담고 있으며 관련 요청을 처리합니다.
+    - `menus`: 상품의 기본적인 정보들을 담고 있으며 관리인에 한하여 메뉴의 추가/수정/삭제가 가능합니다.
+    - `items`: 특정 상품의 가격 및 규격 등 디테일을 담고 있으며 관리인에 한하여 아이템의 추가/수정/삭제가 가능합니다.
+    - `tags`: 특정 상품에 대한 타입과 ID 정보를 담고 있으며 관리인에 한하여 테그의 추가/수정/삭제가 가능합니다.
+    - `tests`: 각 app에서 함수 및 메소드들을 `tests` 디렉토리의 테스트들로 유닛테스트를 실행할 수 있습니다.
+
+**serializer**
+
+### Endpoints
+
+- 회원가입 POST: `/api/members/signup`
+- 로그인 POST: `/api/members/signin`
+- 로그아웃 POST: `/api/members/signout`
+- 상품 등록 POST: `/api/menus`
+- 상품 수정 PUT: `/api/menus/<menu-id>`
+- 상품 삭제 DELETE: `/api/menus/<menu-id>`
+- 상품 상세 조회 GET: `/api/menus/<menu-id>`
+- 상품 리스트 조회 GET: `/api/menus`
 * <과제 결과물 테스트 및 확인 방법>
 - POSTMAN 확인:
 
-## 어플리케이션 실행 방법
+### 과제 결과물 테스트 및 확인 방법
+1. 유닛테스트
+- menus, items, tags 의 추가/조회/수정/삭제 기능에 관하여 Success case와 Fail case로 나누어 Unit Test를 진행하였습니다.
+
+2. POSTMAN 확인:
 
 # 개발환경 설정 방법
 
@@ -116,13 +149,3 @@
     ```
     http://localhost:8001
     ```
-
-* <사용한 기술 스텍>
-
->Python = 3.8.12
->Django = 3.2
->Postgres
-* <해당 리포의 디렉토리 구조, 코드 구조 및 기타 설명>
-
-
-![image](https://user-images.githubusercontent.com/32446834/140312743-eda03d7f-c423-46a0-8e34-fda706d50876.png)
